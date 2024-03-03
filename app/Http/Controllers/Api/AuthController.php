@@ -26,9 +26,6 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
         //respuesta
-        /* return response()->json([
-            "message" => "Alta exitosa"
-        ]); */
         return response($user, Response::HTTP_CREATED);
     }
 
