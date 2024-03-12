@@ -26,9 +26,6 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
         //respuesta
-        /* return response()->json([
-            "message" => "Alta exitosa"
-        ]); */
         return response($user, Response::HTTP_CREATED);
     }
 
@@ -61,9 +58,8 @@ class AuthController extends Controller
     }
 
     public function allUsers() {
-       $users = User::all();
-       return response()->json([
-        "users" => $users
-       ]);
+       $users = User::paginate();
+
+       return $users;
     }
 }
