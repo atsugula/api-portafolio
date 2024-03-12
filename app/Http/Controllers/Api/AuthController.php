@@ -58,9 +58,8 @@ class AuthController extends Controller
     }
 
     public function allUsers() {
-       $users = User::all();
-       return response()->json([
-        "users" => $users
-       ]);
+       $users = User::paginate();
+
+       return $users;
     }
 }
