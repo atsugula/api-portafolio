@@ -30,7 +30,7 @@ class SectionSeeder extends Seeder
         Section::create([
             'name' => 'Portfolio',
             'href' => 'portfolio',
-            'public' => '0',
+            'public' => '1',
         ]);
 
         Section::create([
