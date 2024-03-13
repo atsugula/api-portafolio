@@ -5,3 +5,4 @@ use App\Http\Controllers\V1\HomeController;
 
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
