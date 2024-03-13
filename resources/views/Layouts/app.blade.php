@@ -23,8 +23,6 @@
     @include('Layouts.header')
     <!-- end of page header -->
 
-    <h1>{{ $sections }}</h1>
-
     <!-- about section -->
     <section class="section pt-0" id="about">
         <!-- container -->

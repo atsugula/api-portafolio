@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Models\Section;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Configuration;
 
 class HomeController extends Controller
 {
@@ -15,8 +16,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sections = Section::all();
-        return view('index', compact('sections'));
+        $sections = Section::where('public', '1')->get();
+
+        $configuration = Configuration::first();
+
+        return view('index', compact('sections', 'configuration'));
     }
 
     /**

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('href');
             $table->char('public')->default(0);
             $table->timestamps();
             $table->softDeletes();

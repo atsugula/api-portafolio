@@ -17,6 +17,7 @@ class SectionResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'href' => $this->href,
             'public' => $this->public,
         ];
     }

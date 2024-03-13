@@ -16,32 +16,38 @@ class SectionSeeder extends Seeder
     public function run()
     {
         Section::create([
-            'name' => 'home',
+            'name' => 'Home',
+            'href' => 'home',
             'public' => '1',
         ]);
 
         Section::create([
-            'name' => 'about',
+            'name' => 'About',
+            'href' => 'about',
             'public' => '1',
         ]);
 
         Section::create([
-            'name' => 'portfolio',
+            'name' => 'Portfolio',
+            'href' => 'portfolio',
             'public' => '0',
         ]);
 
         Section::create([
-            'name' => 'testmonial',
+            'name' => 'Testmonial',
+            'href' => 'testmonial',
             'public' => '0',
         ]);
 
         Section::create([
-            'name' => 'blog',
+            'name' => 'Blog',
+            'href' => 'blog',
             'public' => '0',
         ]);
 
         Section::create([
-            'name' => 'contact',
+            'name' => 'Contact',
+            'href' => 'contact',
             'public' => '1',
         ]);
 

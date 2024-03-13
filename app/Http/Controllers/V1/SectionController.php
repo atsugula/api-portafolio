@@ -15,7 +15,7 @@ class SectionController extends Controller
 
     use GeneralTrait;
 
-    public $module = "customers";
+    public $module = "sections";
 
     /**
      * Display a listing of the resource.

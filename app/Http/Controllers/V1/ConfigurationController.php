@@ -25,7 +25,7 @@ class ConfigurationController extends Controller
     public function index()
     {
         try {
-            $configuration = Configuration::where('public', '1')->latest()->paginate();
+            $configuration = Configuration::latest()->paginate();
             return new ConfigurationCollection($configuration);
         } catch (Exception $e) {
             return $this->createErrorResponse([], $e->getMessage(), 404, false, $this->module, 'Index');
