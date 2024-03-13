@@ -1,16 +1,12 @@
 <div class="container">
     <footer class="footer">
         <p class="mb-0">Copyright
-            <script>document.write(new Date().getFullYear())</script> &copy; ATSU
+            <script>document.write(new Date().getFullYear())</script> &copy; {{ $configuration->brand }}
             <a href="https://themewagon.com">ThemeWagon</a>
         </p>
         <div class="social-links text-right m-auto ml-sm-auto">
-            <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/jusuga/" class="link"><i class="ti-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/atsugula" class="link"><i class="ti-github"></i></a>
         </div>
     </footer>
 </div>
