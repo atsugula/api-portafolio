@@ -16,7 +16,7 @@ class ConfigurationSeeder extends Seeder
     public function run()
     {
         Configuration::create([
-            'brand' => 'Jorge Usuga',
+            'brand' => 'Atsu',
             'linkedin' => 'https://www.linkedin.com/in/jusuga/',
             'github' => 'https://github.com/atsugula',
         ]);
