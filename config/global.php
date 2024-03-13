@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'max_operation' => 7,
-    'num_pagination' => 2,
+    'organization' => "OpenCode SAS",
+    'authors' => "Jorge Usuga",
+    'num_pagination' => 10,
 ];
