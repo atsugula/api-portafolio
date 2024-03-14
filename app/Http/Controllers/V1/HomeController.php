@@ -6,6 +6,7 @@ use App\Models\Section;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Configuration;
+use App\Models\Content;
 
 class HomeController extends Controller
 {
@@ -16,55 +17,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sections = Section::where('public', '1')->get();
+        $sections = Section::with('contents')->where('public', '1')->get();
 
         $configuration = Configuration::first();
 
         return view('index', compact('sections', 'configuration'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function downloadCV()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $headers = [
+            'Content-Type' => 'application/pdf',
+        ];
+        $file = public_path('CV_JORGE_USUGA.pdf');
+        return response()->download($file, 'CV_JORGE_USUGA.pdf', $headers);
     }
 }

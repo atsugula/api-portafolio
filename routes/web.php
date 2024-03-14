@@ -10,3 +10,4 @@ use App\Http\Controllers\V1\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
+Route::get('download', [HomeController::class, 'downloadCV'])->name('download.cv');
