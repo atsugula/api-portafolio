@@ -23,6 +23,7 @@ class Slide extends Model
         'content_id',
         'slide',
         'slide_url',
+        'slide_class',
         'slide_title',
         'slide_description',
     ];
@@ -31,6 +32,7 @@ class Slide extends Model
         'content_id' => 'bail|required|numeric',
         'slide' => 'bail|required|numeric',
         'slide_url' => 'bail|required',
+        'slide_class' => 'bail|required',
         'slide_title' => 'bail|required',
         'slide_description' => 'bail|required',
     ];

@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('slides', function (Blueprint $table) {
+        Schema::create('slides', function (Blueprint $table) {
             // Parte para el corrusel
             $table->char('slide')->default(0);
             $table->text('slide_url')->nullable();
+            $table->text('slide_class')->nullable();
             $table->text('slide_title')->nullable();
             $table->text('slide_description')->nullable();
 
@@ -38,7 +39,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('slides', function (Blueprint $table) {
-            //
+            Schema::dropIfExists('slides');
         });
     }
 };

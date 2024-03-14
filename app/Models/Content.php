@@ -25,10 +25,6 @@ class Content extends Model
         'sub_title',
         'body',
         'button',
-        'slide',
-        'slide_url',
-        'slide_title',
-        'slide_description',
     ];
 
     static $rules = [
@@ -37,10 +33,6 @@ class Content extends Model
         'sub_title' => 'bail|required',
         'body' => 'bail|required',
         'button' => 'bail|required',
-        'slide' => 'bail|required|numeric',
-        'slide_url' => 'bail|required',
-        'slide_title' => 'bail|required',
-        'slide_description' => 'bail|required',
     ];
 
     public function section()

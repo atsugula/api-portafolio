@@ -9,52 +9,35 @@
         {!! $section?->contents[0]?->sub_title !!}
         {{-- end:section subtitle --}}
 
-        @if ($section?->contents[0]?->slide != 0)
-            <!-- row -->
-            <div class="row">
+        <!-- row -->
+        <div class="row">
+            @forelse ($section?->contents[0]->slides as $slide)
                 <div class="col-md-4">
                     <a href="#" class="portfolio-card">
-                        <img src="assets/imgs/folio-1.jpg" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                        <img src="{{ asset($slide->slide_url) }}" class="{{ $slide->slide_class }}" alt="Preview proyect">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                    <p class="font-weight-normal">Category: Web Templates</p>
+                                {{-- begin:section title --}}
+                                {!! $slide->slide_title !!}
+                                {{-- end:section title --}}
+
+                                {{-- begin:section subtitle --}}
+                                {!! $slide->slide_description !!}
+                                {{-- end:section subtitle --}}
                             </span>
                         </span>
                     </a>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/folio-2.jpg" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                    <p class="font-weight-normal">Category: Web Templates</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/folio-3.jpg" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                    <p class="font-weight-normal">Category: Web Templates</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <!-- end of row -->
-        @else
-            <p>
-                No hay contenido.
-            </p>
-        @endif
+                @if ($slide->slide == 1)
+                    <br>                    
+                @endif
+            @empty
+                <p>
+                    No hay contenido.
+                </p>
+            @endforelse
+        </div>
+        <!-- end of row -->
 
     </div><!-- end of container -->
 </section> <!-- end of portfolio section -->
