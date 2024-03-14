@@ -6,6 +6,7 @@ use App\Models\Section;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Configuration;
+use App\Models\Content;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sections = Section::where('public', '1')->get();
+        $sections = Section::with('contents')->where('public', '1')->get();
 
         $configuration = Configuration::first();
 

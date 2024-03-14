@@ -19,10 +19,6 @@
     @include('Layouts.navbar')
     <!-- End of Page Navbar -->
 
-    <!-- page header -->
-    @include('Layouts.header')
-    <!-- end of page header -->
-
     {{-- Load sections --}}
     @forelse ($sections as $section)
         @include('sections.' . $section->href)

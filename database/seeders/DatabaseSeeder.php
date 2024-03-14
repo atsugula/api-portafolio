@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SectionSeeder::class,
             ConfigurationSeeder::class,
+            ContentSeeder::class,
         ]);
     }
 }

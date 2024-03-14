@@ -26,4 +26,9 @@ class Section extends Model
         'public' => 'bail|required'
     ];
 
+    public function contents()
+    {
+        return $this->hasMany(Content::class, 'section_id', 'id');
+    }
+
 }
